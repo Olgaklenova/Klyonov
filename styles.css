@@ -1,0 +1,698 @@
+@font-face {
+    font-family: Inter;
+    src: url('./fonts/Inter18pt-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('./fonts/Inter18pt-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Inter;
+    src: url('./fonts/Inter18pt-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/**
+  Нормализация блочной модели
+ */
+ *,
+ ::before,
+ ::after {
+   box-sizing: border-box;
+ }
+ 
+ /**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+ :where(ul, ol):where([class]) {
+   padding-left: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+ body,
+ :where(blockquote, figure):where([class]) {
+   margin: 0;
+ }
+ 
+ /**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+ :where(
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6,
+   p,
+   ul,
+   ol,
+   dl
+ ):where([class]) {
+   margin-block: 0;
+ }
+ 
+ :where(dd[class]) {
+   margin-left: 0;
+ }
+ 
+ :where(fieldset[class]) {
+   margin-left: 0;
+   padding: 0;
+   border: none;
+ }
+ 
+ /**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+ :where(ul[class]) {
+   list-style: none;
+ }
+ 
+ :where(address[class]) {
+   font-style: normal;
+ }
+ 
+ /**
+   Обнуляем вертикальные внешние отступы параграфа,
+   объявляем локальную переменную для внешнего отступа вниз,
+   чтобы избежать взаимодействие с более сложным селектором
+  */
+ p {
+   --paragraphMarginBottom: 24px;
+ 
+   margin-block: 0;
+ }
+ 
+ /**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+ p:where(:not([class]):not(:last-child)) {
+   margin-bottom: var(--paragraphMarginBottom);
+ }
+ 
+ 
+ /**
+   Упрощаем работу с изображениями и видео
+  */
+ img,
+ video {
+   display: block;
+   max-width: 100%;
+   height: auto;
+ }
+ 
+ /**
+   Наследуем свойства шрифт для полей ввода
+  */
+ input,
+ textarea,
+ select,
+ button {
+   font: inherit;
+ }
+ 
+ html {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   height: 100%;
+   /**
+     Убираем скачок интерфейса по горизонтали
+     при появлении / исчезновении скроллбара
+    */
+   scrollbar-gutter: stable;
+ }
+ 
+ /**
+   Плавный скролл
+  */
+ html,
+ :has(:target) {
+   scroll-behavior: smooth;
+ }
+ 
+ body {
+   /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+   min-height: 100%;
+   /**
+     Унифицированный интерлиньяж
+    */
+   line-height: 1.5;
+ }
+ 
+ /**
+   Нормализация высоты элемента ссылки при его инспектировании в DevTools
+  */
+ a:where([class]) {
+   display: inline-flex;
+ }
+ 
+ /**
+   Курсор-рука при наведении на элемент
+  */
+ button,
+ label {
+   cursor: pointer;
+ }
+ 
+ /**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут fill со значением 'none' или начинается с 'url')
+  */
+ :where([fill]:not(
+   [fill="none"],
+   [fill^="url"]
+ )) {
+   fill: currentColor;
+ }
+ 
+ /**
+   Приводим к единому цвету svg-элементы
+   (за исключением тех, у которых уже указан
+   атрибут stroke со значением 'none')
+  */
+ :where([stroke]:not(
+   [stroke="none"],
+   [stroke^="url"]
+ )) {
+   stroke: currentColor;
+ }
+ 
+ /**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+ svg * {
+   transition-property: fill, stroke;
+ }
+ 
+ /**
+   Приведение рамок таблиц в классический 'collapse' вид
+  */
+ :where(table) {
+   border-collapse: collapse;
+   border-color: currentColor;
+ }
+ 
+ /**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+ @media (prefers-reduced-motion: reduce) {
+   *,
+   ::before,
+   ::after {
+     animation-duration: 0.01ms !important;
+     animation-iteration-count: 1 !important;
+     transition-duration: 0.01ms !important;
+     scroll-behavior: auto !important;
+   }
+ }
+
+
+
+
+ :root {
+  --color-dark: #000000;
+  --color-light: #FFFFFF;
+  --color-grey: rgba(0, 0, 0, 0.7);
+  --color-red: #EF4444;
+
+  --border-radius: 222px;
+
+  --font-family: 'Inter', Arial,  sans-serif;
+  
+  --content-width: 1636px;
+ 
+  --container-width: calc(var(--content-width)+30px);
+  
+  --transition-duration: 0.2s;
+
+
+
+ }
+
+ body {
+  font-family: var(--font-family);
+  background-color: var(--color-light);
+  color: var(--color-grey);
+  font-size: 16px;
+  font-weight: 600px;
+  letter-spacing: 0.5%;
+  background-color: rgb(250, 250, 250);
+ }
+
+.container {
+  max-width: var(--container-width);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+ h1, h2, h3, h4, h5, h6 {
+  font-weight: 700px;
+ }
+
+a {
+  color: var(--color-dark);
+}
+
+a:hover {
+  color: var(--color-red);
+
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.button {
+  display: inline-flex;
+  height: 41px;
+  width: 121px;
+  align-items: center;
+  padding-inline: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5%;
+  color: var(--color-light);
+  background-color: var(--color-red);
+  border-radius: var(--border-radius);
+  border: none;
+}
+
+
+.header {
+ padding: 32px 0;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-klyonov {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 11px;
+}
+.header-logo-name {
+font-size: 24px;
+color: var(--color-red);
+font-weight: bold;
+}
+
+.header-menu-list {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.header-menu-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  
+}
+
+.header-menu-item {
+  position: relative;
+}
+
+.header-menu-item::after {
+content: "";
+width: 4px;
+height: 4px;
+background-color: var(--color-red);
+border-radius: 50%;
+position: absolute;
+bottom: 0px;
+display: none;
+margin-left: 50%;
+}
+
+
+.header-menu-item:hover::after {
+display: block;
+}
+
+.header-right-side {
+  display: flex;
+  align-items: center;
+  column-gap: 42px;
+}
+
+.banner {
+  background-image: url(./images/background.png);
+  height: 540px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* border-radius: 15px; */
+ 
+}
+
+.banner__greetings {
+  padding-left: 56px;
+}
+
+.banner__hello {
+  color: var(--color-light);
+  font-size: 64px;
+  
+}
+
+.banner__advice {
+  color: var(--color-light);
+  font-weight: 500px;
+  font-size: 24px;
+  padding-bottom: 42px;
+}
+
+.button--banner {
+  height: 50px;
+  width: 158px;
+  font-size: 18px;
+  padding-inline: 30px;
+  
+}
+
+.cards {
+ padding-inline: 15px; 
+}
+  
+.cards__list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.cards__item {
+  height: 285px;
+  width: 524px;
+  background-color: #FFFFFF;
+}
+
+.cards__item__title {
+  font-size: 36px;
+}
+
+.cards__item__description {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.button__cards {
+  width: 152px;
+  height: 41px;
+  margin-top: 32px;
+}
+
+.other-cards {
+  margin-top: 100px;
+}
+
+.other-cards__title {
+  display: block;
+  margin-bottom: 56px;
+  font-size: 42px;
+  font-weight: 500;
+  margin-bottom: 56px;
+}
+
+.other-cards__list {
+ display: grid;
+ row-gap: 30px;
+ column-gap: 32px;
+ grid-template-columns: 3fr 2fr 3fr 2fr;
+ margin: 56px 0px 56px 0px;
+}
+
+.other-cards__item {
+  background-color: #FFFFFF;
+}
+
+.other-cards__item:nth-child(1) {
+  grid-column: 1 / 3;
+  grid-row: 1;
+}
+
+.other-cards__item:nth-child(2) {
+  grid-column: 3 / 4;
+  grid-row: 1;
+}
+
+.other-cards__item:nth-child(3) {
+  grid-column: 4 / 5; 
+}
+
+.other-cards__list:nth-child(3) {
+  /* grid-row: span ; */
+}
+
+.other-cards__item:nth-child(5) {
+  grid-row: 2;
+  grid-column: 2 / 4;
+}
+
+
+
+.other-cards__item__title {
+  font-size: 36px;
+  font-weight: 700;
+
+}
+
+.other-cards__item__description {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.steps__list {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  list-style-type: none;
+  counter-reset: num;
+  position: relative;
+  margin: 0 0 0 60px;
+  padding: 15px 0 5px 0;
+  
+}
+
+.steps__list__item {
+  position: relative;
+  margin: 0 0 0 0;
+  padding: 0 0 21px 56px;
+  line-height: 1.4;
+}
+
+.steps__list__item:after {
+  content: counter(num);
+  counter-increment: num;
+  display: inline-block;
+  position: absolute;
+  top:0;
+  left: -45px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  background: var(--color-grey);
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-light);
+  border-radius: 50%;
+  border: 1px solid rgb(150, 150, 150);
+}
+
+.steps__list__item:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -35px;
+  height: 1px;
+  width: 28px;
+  background-color: rgb(150, 150, 150);
+  margin-left: 40px; 
+  
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-us{
+width: 1080px;
+height: 452px;
+background-color: var(--color-light);
+
+}
+
+.contact-us__title {
+text-align: center;
+margin-top: 32px;
+font-size: 42px;
+}
+
+.contact-us__body {
+  margin: 56px 139px 32px 139px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between ;
+  flex-wrap: wrap;
+  
+}
+
+.input {
+  width: 385px;
+  height: 55px;
+  border-radius: 12px;
+  border: 1px solid rgb(225, 225, 225);
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.contact-us--email {
+  margin-right: 32px;
+  margin-bottom: 20px;
+}
+
+.contact-us--text {
+  width: 802px;
+  height: 114px;
+  margin-bottom: 42px;
+
+}
+
+.button--contact {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer {
+  height: 112px;
+  background-color: var(--color-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer--logo {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  margin-left: 142px;
+}
+
+.logo--footer-name {
+font-size: 24px;
+color: var(--color-red);
+font-weight: bold;
+}
+
+.design-by {
+  color: var(--color-light);
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 142px;
+}
+
+.designer {
+  color: var(--color-red);
+}
+
+
+@media (max-width: 1440px) {
+ .other-cards__title {
+  margin-top: 50px;
+ }
+
+  }
+
+
+@media (max-width: 1280px) {
+  
+  }
+
+
+@media (max-width: 1024px) {
+.banner__photo {
+  width: 200px;
+  height: 200px;
+}
+.banner__hello {
+  font-size: 16px;
+}
+.banner__advice {
+  font-size: 14px;
+}
+.cards {
+  margin-bottom: 30px;
+}
+}
+
+  
+
+
+
+@media (max-width: 768px) {
+.other-cards__title {
+  margin-top: 30px;
+
+}
+
+@media (max-width: 576px) {
+
+
+}
+
+
+
