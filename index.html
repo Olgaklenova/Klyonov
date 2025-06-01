@@ -1,234 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Klyonov</title>
-    <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-    
-<header class="header">
-    <div class="header__container container">
-    <div class="header-klyonov">
-        <a class="header-logo" href="/">
-        <img 
-        class="header-logo-image"
-        src="./images/logo.png"
-        alt="Klyonov logo"
-        width="48" height="48" loading="lazy"
-        />
-    </a>
-    <div class="header-logo-name">Klyonov+</div>
-    </div>
-    
-    <div class="header-right-side">
-    
-    <nav class="header-menu">
-        <ul class="header-menu-list">
-            <li class="header-menu-item">
-                <a class="header-menu-link" href="/">Главная</a>
-            </li>
-            <li class="header-menu-item">
-                <a class="header-menu-link" href="/">Карточки</a>
-            </li>
-            <li class="header-menu-item">
-                <a class="header-menu-link" href="/">Сетка</a>
-            </li>
-            <li class="header-menu-item">
-                <a class="header-menu-link" href="/">Форма</a>
-            </li>
-        </ul>
-    
-    </nav>
-<button 
-   class="button"
-   type="button"
-   >
-   Связаться
-   </button>
-</div>
-</div>
-</header>
-<main>
-<section class="banner container">
-    <section class="banner__greetings">
-    <h1 class="visually-hidden">Приветственный баннер от Матвея</h1>
-    <p class="banner__hello">Привет!</p>
-    <p class="banner__advice">На этом макете ты будешь тренироваться <br> верстке на HTML & CSS</p>
-    <button 
-   class="button button--banner"
-   type="button"
-   >
-   Связаться
-   </button>
-    </section>
-     <img
-   class="banner__photo"
-   src="./images/Matvey-photo.png"
-   alt="some emoji of Matvey"
-   width="421" height="370" loading="lazy"
-   />
-   
-</section>
-
-
-<section class="cards container">
-  <ul class="cards__list">
-    <h2 class="visually-hidden">Карточки</h2>
-    <li class="cards__item">
-        <h3 class="cards__item__title">Первая карточка</h3>
-        <p class="cards__item__description">На этой карточке должен быть какой-то осмысленный текст, но я его не придумал. 
-            Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.</p>
-            <button 
-        class="button button__cards"
-         type="button"
-            >
-            Просто кнопка
-            </button>
-    </li>
-    
-    <li class="cards__item">
-        <h3 class="cards__item__title">Вторая карточка</h3>
-        <p class="cards__item__description">На этой карточке должен быть какой-то осмысленный текст, но я его не придумал. 
-            Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.</p>
-            <button 
-        class="button button__cards"
-         type="button"
-            >
-            Просто кнопка
-            </button>
-    </li>
-
-    <li class="cards__item">
-        <h3 class="cards__item__title">Третья карточка</h3>
-        <p class="cards__item__description">На этой карточке должен быть какой-то осмысленный текст, но я его не придумал. 
-            Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum.</p>
-            <button 
-        class="button button__cards"
-         type="button"
-            >
-            Просто кнопка
-            </button>
-    </li>
-  </ul>
-
-</section>
-
-
-<section class="other-cards container">
-    <h2 class="other-cards__title">А тут другие прикольные карточки</h2>
-<ul class="other-cards__list" style="display: grid;">
-    <li class="other-cards__item">
-        <h3 class="other-cards__item__title">Первая карточка</h3>
-        <p class="other-cards__item__description">CSS — это язык описания внешнего вида документа, то есть он отвечает за то, как выглядят веб-страницы: цвет фона и декоративных элементов, размер и стиль шрифтов. Термин расшифровывается как Cascading Style Sheets (каскадные таблицы стилей). CSS взаимодействует с другим языком разметки — HTML, который отвечает за размещение элементов на странице.</p>
-    </li>
-
-    <li class="other-cards__item">
-        <h3 class="other-cards__item__title">Вторая карточка</h3>
-        <p class="other-cards__item__description">HTML — язык разметки для создания структуры веб-страницы и представления контента. Благодаря разметке браузер знает в каком порядке отображать элементы, и что они значат. Чаще всего работает в связке в CSS</p>
-    </li>
-
-    <li class="other-cards__item">
-        <h3 class="other-cards__item__title">Третья карточка</h3>
-        <p class="other-cards__item__description">React - это JavaScript-библиотека для создания пользовательских интерфейсов. Обратите внимание, что это именно библиотека, а не фреймворк. </p>
-    </li>
-
-    <li class="other-cards__item">
-        <h3 class="other-cards__item__title">Четвёртая карточка</h3>
-        <p class="other-cards__item__description">JavaScript – это язык программирования, который используют разработчики для создания интерактивных веб-страниц. Функции JavaScript могут улучшить удобство взаимодействия пользователя с веб-сайтом.</p>
-    </li>
-
-    <li class="other-cards__item">
-        <h3 class="other-cards__item__title">Пятая карточка</h3>
-        <p class="other-cards__item__description">TypeScript — это строго типизированный язык программирования, построенный на JavaScript. Разработчики добавили в него дополнительные возможности, такие как статическая типизация, классы и модули, чтобы создавать более надежные и поддерживаемые программы.</p>
-    </li>
-</ul>
-
-</section>
-
-<div class="contact-wrapper container">
-
-<section class="steps" >
-    <h2 class="steps__title">Этапы работы</h2>
-    <ol class="steps__list">
-        <li class="steps__list__item"> html</li>
-        <li class="steps__list__item"> css</li>
-        <li class="steps__list__item"> javascript</li>
-        <li class="steps__list__item"> typescript</li>
-        <li class="steps__list__item"> react</li>
-        <li class="steps__list__item"> redux</li>
-    </ol>
-
-</section>
-
-
-<section class="contact-us">
-    <h2 class="contact-us__title">Свяжись со мной</h2>
-    <div class="contact-us__body">
-        <form action="">
-        <div class="contact-us__inputs">
-        <label class="visually-hidden" for="email">Email</label>
-        <input 
-        class="contact-us--email input"
-        id="email"
-        name="user-email"
-        placeholder="Email"
-        />
-   
-        <label class="visually-hidden" for="username"> Имя</label>
-        <input 
-        class="contact-us--name input"
-        id="username" 
-        name="user-name"
-        placeholder="Имя"
-        />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <div class="header-klyonov">
+          <a class="header-logo" href="/">
+            <img
+              class="header-logo-image"
+              src="./images/logo.png"
+              alt="Klyonov logo"
+              width="48"
+              height="48"
+              loading="lazy"
+            />
+          </a>
+          <div class="header-logo-name">Klyonov+</div>
         </div>
 
-   
-        <label class="visually-hidden" for="text">Сообщение</label>
-        <input 
-        class="contact-us--text input"
-        id="text"
-        placeholder="Сообщение"
-        type="text"
-        /> 
-   
-   <button 
-   class="button button--contact"
-   type="button"
-   >
-   Связаться
-   </button>
-        </form>
+       <div class="header-right-side">
+          <nav class="header-menu">
+            <ul class="header-menu-list">
+              <li class="header-menu-item">
+                <a class="header-menu-link" href="/">Главная</a>
+              </li>
+              <li class="header-menu-item">
+                <a class="header-menu-link" href="/">Карточки</a>
+              </li>
+              <li class="header-menu-item">
+                <a class="header-menu-link" href="/">Сетка</a>
+              </li>
+              <li class="header-menu-item">
+                <a class="header-menu-link" href="/">Форма</a>
+              </li>
+            </ul>
+          </nav>
 
-</div>
-
-</section>
-
-</div>
-</main>
-
-<footer class="footer container">
-    <div class="footer--logo">
-         <a class="logo--footer" href="/">
-        <img 
-        class="logo--footer-image"
-        src="./images/logo.png"
-        alt="Klyonov logo"
-        width="48" height="48" loading="lazy"
+          <button class="button" type="button">Связаться</button>
+        
+      </div>
+      </div>
+    </header>
+    <main>
+      <section class="banner container">
+        <section class="banner__greetings">
+          <h1 class="visually-hidden">Приветственный баннер от Матвея</h1>
+          <p class="banner__hello">Привет!</p>
+          <p class="banner__advice">
+            На этом макете ты будешь тренироваться <br />
+            верстке на HTML & CSS
+          </p>
+          <button class="button button--banner" type="button">Связаться</button>
+        </section>
+        <img
+          class="banner__photo"
+          src="./images/Matvey-photo.png"
+          alt="some emoji of Matvey"
+          width="421"
+          height="370"
+          loading="lazy"
         />
-    </a>
-    <div class="logo--footer-name">Klyonov</div>
-    </div>
-    </div>
+      </section>
 
-    <div class="design-by">
-         designed by 
-         <a class="designer" href="/"> oxee</a>
-    </div>
+      <section class="cards container">
+        <ul class="cards__list">
+          <h2 class="visually-hidden">Карточки</h2>
+          <li class="cards__item">
+            <h3 class="cards__item__title">Первая карточка</h3>
+            <p class="cards__item__description">
+              На этой карточке должен быть какой-то осмысленный текст, но я его
+              не придумал. Korem ipsum dolor sit amet, consectetur adipiscing
+              elit. Nunc vulputate libero et velit interdum.
+            </p>
+            <button class="button button__cards" type="button">
+              Просто кнопка
+            </button>
+          </li>
 
-</footer>
+          <li class="cards__item">
+            <h3 class="cards__item__title">Вторая карточка</h3>
+            <p class="cards__item__description">
+              На этой карточке должен быть какой-то осмысленный текст, но я его
+              не придумал. Korem ipsum dolor sit amet, consectetur adipiscing
+              elit. Nunc vulputate libero et velit interdum.
+            </p>
+            <button class="button button__cards" type="button">
+              Просто кнопка
+            </button>
+          </li>
 
-</body>
+          <li class="cards__item">
+            <h3 class="cards__item__title">Третья карточка</h3>
+            <p class="cards__item__description">
+              На этой карточке должен быть какой-то осмысленный текст, но я его
+              не придумал. Korem ipsum dolor sit amet, consectetur adipiscing
+              elit. Nunc vulputate libero et velit interdum.
+            </p>
+            <button class="button button__cards" type="button">
+              Просто кнопка
+            </button>
+          </li>
+        </ul>
+      </section>
+
+      <section class="other-cards container">
+        <h2 class="other-cards__title">А тут другие прикольные карточки</h2>
+        <ul class="other-cards__list" style="display: grid">
+          <li class="other-cards__item">
+            <h3 class="other-cards__item__title">Первая карточка</h3>
+            <p class="other-cards__item__description">
+              CSS — это язык описания внешнего вида документа, то есть он
+              отвечает за то, как выглядят веб-страницы: цвет фона и
+              декоративных элементов, размер и стиль шрифтов. Термин
+              расшифровывается как Cascading Style Sheets (каскадные таблицы
+              стилей). CSS взаимодействует с другим языком разметки — HTML,
+              который отвечает за размещение элементов на странице.
+            </p>
+          </li>
+
+          <li class="other-cards__item">
+            <h3 class="other-cards__item__title">Вторая карточка</h3>
+            <p class="other-cards__item__description">
+              HTML — язык разметки для создания структуры веб-страницы и
+              представления контента. Благодаря разметке браузер знает в каком
+              порядке отображать элементы, и что они значат. Чаще всего работает
+              в связке в CSS
+            </p>
+          </li>
+
+          <li class="other-cards__item">
+            <h3 class="other-cards__item__title">Третья карточка</h3>
+            <p class="other-cards__item__description">
+              React - это JavaScript-библиотека для создания пользовательских
+              интерфейсов. Обратите внимание, что это именно библиотека, а не
+              фреймворк. 
+            </p>
+          </li>
+
+          <li class="other-cards__item">
+            <h3 class="other-cards__item__title">Четвёртая карточка</h3>
+            <p class="other-cards__item__description">
+              JavaScript – это язык программирования, который используют
+              разработчики для создания интерактивных веб-страниц. Функции
+              JavaScript могут улучшить удобство взаимодействия пользователя с
+              веб-сайтом.
+            </p>
+          </li>
+
+          <li class="other-cards__item">
+            <h3 class="other-cards__item__title">Пятая карточка</h3>
+            <p class="other-cards__item__description">
+              TypeScript — это строго типизированный язык программирования,
+              построенный на JavaScript. Разработчики добавили в него
+              дополнительные возможности, такие как статическая типизация,
+              классы и модули, чтобы создавать более надежные и поддерживаемые
+              программы.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <div class="contact-wrapper container">
+        <section class="steps">
+          <h2 class="steps__title">Этапы работы</h2>
+          <ol class="steps__list">
+            <li class="steps__list__item">html</li>
+            <li class="steps__list__item">css</li>
+            <li class="steps__list__item">javascript</li>
+            <li class="steps__list__item">typescript</li>
+            <li class="steps__list__item">react</li>
+            <li class="steps__list__item">redux</li>
+          </ol>
+        </section>
+
+        <section class="contact-us">
+          <h2 class="contact-us__title">Свяжись со мной</h2>
+          <div class="contact-us__body">
+            <form action="">
+              <div class="contact-us__inputs">
+                <label class="visually-hidden" for="email">Email</label>
+                <input
+                  class="contact-us--email input"
+                  id="email"
+                  name="user-email"
+                  placeholder="Email"
+                />
+
+                <label class="visually-hidden" for="username"> Имя</label>
+                <input
+                  class="contact-us--name input"
+                  id="username"
+                  name="user-name"
+                  placeholder="Имя"
+                />
+              </div>
+
+              <label class="visually-hidden" for="text">Сообщение</label>
+              <input
+                class="contact-us--text input"
+                id="text"
+                placeholder="Сообщение"
+                type="text"
+              />
+
+              <button class="button button--contact" type="button">
+                Связаться
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer container">
+      <div class="footer--logo">
+        <a class="logo--footer" href="/">
+          <img
+            class="logo--footer-image"
+            src="./images/logo.png"
+            alt="Klyonov logo"
+            width="48"
+            height="48"
+            loading="lazy"
+          />
+        </a>
+        <div class="logo--footer-name">Klyonov</div>
+      </div>
+
+      <div class="design-by">
+        designed by
+        <a class="designer" href="/"> oxee</a>
+      </div>
+    </footer>
+  </body>
 </html>
